@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Notes</title>
+    </head>
+    <body>
+        <h1>Notes</h1>
+        {% for note in notes %}
+            <div>
+                <h5>Note #{{ note.id }}</h5>
+                <h6>Created at: {{ note.created_at }}</h6>
+                <p>{{ note.content }}</p>
+            </div>
+            <hr>
+        {% endfor %}
+    </body>
+</html>

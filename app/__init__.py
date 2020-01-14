@@ -1,10 +1,8 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-
 
 # Create unitialized ... objects, like the database
 # Allows other files in the app module to access the database object
-db = SQLAlchemy()
+# db = SQLAlchemy()
 
 
 def create_app():
@@ -18,15 +16,14 @@ def create_app():
     app.config.from_object('config.Config')
 
     # Initializing ... objects with the flask app object
-    db.init_app(app)
+    # db.init_app(app)
 
     with app.app_context():
 
         # import models, views, register blueprints, apis etc.
-        from . import models
         from . import views
 
         # Create the database
-        db.create_all()
+        # db.create_all()
 
         return app
